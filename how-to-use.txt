@@ -27,3 +27,8 @@ prereq: npm install --save react-redux
 
 5. TypeError: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createContext is not a function
     - npm update react react-dom
+
+6. Input Forms , no need for redux
+6a. Added my own twist to it, passing in the event from AddPerson form TO personReducer.js
+
+7. Just finished Redux basics!!
