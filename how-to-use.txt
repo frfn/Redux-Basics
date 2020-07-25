@@ -7,7 +7,23 @@ Compare my code to yours to solve issues you might encounter. You may also copy 
 
 MY TAKE:
 
+prereq: npm install --save react-redux 
+        npm install --save redux
+
 1. create store folder
     - create reducer folder + files for reducer
+    - actions.js [if needed]
 
-2. 
+2. create reducer file
+    - look at the steps
+
+3. create actions.js CONSTANTS
+    - i did export default ... it should be 'export const ADD = "ADD";'
+
+4. Persons.js -- adding the Redux properties!
+    - connect
+    - mapStateToProps
+    - mapDispatchToProps
+
+5. TypeError: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createContext is not a function
+    - npm update react react-dom
