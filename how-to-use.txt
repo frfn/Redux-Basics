@@ -12,7 +12,7 @@ prereq: npm install --save react-redux
 
 1. create store folder
     - create reducer folder + files for reducer
-    - actions.js [if needed]
+    - actions.js [if needed] -- it was
 
 2. create reducer file
     - look at the steps

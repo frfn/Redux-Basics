@@ -7,6 +7,8 @@ import * as actionTypes from "../store/actions";
 
 import { connect } from "react-redux";
 
+/* Summary -- this is where Redux will be used. Uses the connect() to grab a slice of the state + dispatch calls */
+
 class Persons extends Component {
 	// state = {
 	//     persons: []
@@ -51,22 +53,33 @@ class Persons extends Component {
 }
 
 // OUTSIDE of fn creation
-/* Redux -- state + dispatch WILL be functions */
+/* Redux -- state + dispatch WILL be arrow functions */
 
-// returns a JS object
+// to use persons property, this is gathered from central store by using connect()
 const mapStateToProps = (state) => {
 	return {
 		persons: state.persons,
 	};
 };
 
+// to use functions that will connect to the store
 const mapDispatchToProps = (dispatch) => {
 	return {
+		/* args will be name, age, and event */
 		onAddPerson: (name, age, event) =>
+
+			/* dispatch returns an object, must always have 'type' property */
 			dispatch({
 				type: actionTypes.ADD,
+
+				// I'm passing event in so I can stop the refresh of page, annoying lol
 				payload: { name: name, age: age, event: event },
+				
+				// though it's another args passed, it will be under "action" in the reducer
+				test: "String test"
 			}),
+
+		/* behind the scenes, uses the filter() to sort through elements and mark it 'true' or 'false' based on ID */
 		onDeletePerson: (id) =>
 			dispatch({ type: actionTypes.DELETE, personElementId: id }),
 	};
